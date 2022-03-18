@@ -11,6 +11,12 @@ profile = {
             "endpoint": 0,
         },
         {
+            "name": "SteelSeries Prime Wireless",
+            "vendor_id": 0x1038,
+            "product_id": 0x1840,
+            "endpoint": 0,
+        },
+        {
             "name": "SteelSeries Prime Rainbow 6 Siege Black Ice Edition",
             "vendor_id": 0x1038,
             "product_id": 0x182A,
