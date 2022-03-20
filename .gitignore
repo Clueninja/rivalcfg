@@ -1,0 +1,11 @@
+__env*_
+__dev*__
+__pycache__
+*.pyc
+*.egg-info
+dist
+build
+.vscode/*
+.nox
+.pytest_cache
+TODO.md
