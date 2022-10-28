@@ -1,12 +1,12 @@
-SteelSeries Aerox 3 Wireless
+SteelSeries Aerox 9 Wireless
 ============================
 
 
 Supported Models
 ----------------
 
-.. rivalcfg_device_family:: aerox3_wireless_wired
-.. rivalcfg_device_family:: aerox3_wireless_wireless
+.. rivalcfg_device_family:: aerox9_wireless_wired
+.. rivalcfg_device_family:: aerox9_wireless_wireless
 
 
 Missing Features
@@ -15,12 +15,13 @@ Missing Features
 The following feature are currently not supported by Rivalcfg:
 
 * Smart illumination
+* Button mapping
 
 
 Command-Line Usage
 ------------------
 
-.. rivalcfg_device_cli:: aerox3_wireless_wired
+.. rivalcfg_device_cli:: aerox9_wireless_wired
 
 
 Sensitivity (DPI)
@@ -64,15 +65,6 @@ Rainbow Effect
 
 The Aerox 3 offers an onboard rainbow light effect. Please note that the effect
 is reset if you change colors.
-
-
-Buttons
--------
-
-.. figure:: ./images/aerox_3_buttons.svg
-   :alt: Aerox 3 buttons schema
-
-.. include:: ./_buttons.rst
 
 
 Python API

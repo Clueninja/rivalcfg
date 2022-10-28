@@ -2,7 +2,7 @@ import pytest
 
 from rivalcfg import usbhid
 from rivalcfg import mouse
-from rivalcfg.devices import aerox3_wireless_wireless
+from rivalcfg.devices import aerox9_wireless_wireless
 from rivalcfg import mouse_settings
 
 
@@ -12,11 +12,11 @@ class TestDevice(object):
         settings = mouse_settings.FakeMouseSettings(
             0x1038,
             0xBAAD,
-            aerox3_wireless_wireless.profile,
+            aerox9_wireless_wireless.profile,
         )
         return mouse.Mouse(
             usbhid.FakeDevice(),
-            aerox3_wireless_wireless.profile,
+            aerox9_wireless_wireless.profile,
             settings,
         )
 
@@ -140,70 +140,6 @@ class TestDevice(object):
     )
     def test_set_dim_timer(self, mouse, value, expected_hid_report):
         response = mouse.set_dim_timer(value)
-        mouse._hid_device.bytes.seek(0)
-        hid_report = mouse._hid_device.bytes.read()
-        assert hid_report == expected_hid_report
-        assert len(response) == 64
-
-    @pytest.mark.parametrize(
-        "value,expected_hid_report",
-        [
-            (
-                "default",
-                b"\x02\x00"
-                b"\x6a"
-                b"\x01\x00\x00\x00\x00"
-                b"\x02\x00\x00\x00\x00"
-                b"\x03\x00\x00\x00\x00"
-                b"\x04\x00\x00\x00\x00"
-                b"\x05\x00\x00\x00\x00"
-                b"\x30\x00\x00\x00\x00"
-                b"\x31\x00\x00\x00\x00"
-                b"\x32\x00\x00\x00\x00",
-            ),
-            (
-                "buttons(button2=button6)",
-                b"\x02\x00"
-                b"\x6a"
-                b"\x01\x00\x00\x00\x00"
-                b"\x06\x00\x00\x00\x00"
-                b"\x03\x00\x00\x00\x00"
-                b"\x04\x00\x00\x00\x00"
-                b"\x05\x00\x00\x00\x00"
-                b"\x30\x00\x00\x00\x00"
-                b"\x31\x00\x00\x00\x00"
-                b"\x32\x00\x00\x00\x00",
-            ),
-            (
-                {"buttons": {"button2": "button6"}},
-                b"\x02\x00"
-                b"\x6a"
-                b"\x01\x00\x00\x00\x00"
-                b"\x06\x00\x00\x00\x00"
-                b"\x03\x00\x00\x00\x00"
-                b"\x04\x00\x00\x00\x00"
-                b"\x05\x00\x00\x00\x00"
-                b"\x30\x00\x00\x00\x00"
-                b"\x31\x00\x00\x00\x00"
-                b"\x32\x00\x00\x00\x00",
-            ),
-            (
-                "buttons(ScrollUp=ScrollDown; ScrollDown=ScrollUp)",
-                b"\x02\x00"
-                b"\x6a"
-                b"\x01\x00\x00\x00\x00"
-                b"\x02\x00\x00\x00\x00"
-                b"\x03\x00\x00\x00\x00"
-                b"\x04\x00\x00\x00\x00"
-                b"\x05\x00\x00\x00\x00"
-                b"\x30\x00\x00\x00\x00"
-                b"\x32\x00\x00\x00\x00"
-                b"\x31\x00\x00\x00\x00",
-            ),
-        ],
-    )
-    def test_set_buttons_mapping(self, mouse, value, expected_hid_report):
-        response = mouse.set_buttons_mapping(value)
         mouse._hid_device.bytes.seek(0)
         hid_report = mouse._hid_device.bytes.read()
         assert hid_report == expected_hid_report

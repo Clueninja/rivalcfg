@@ -5,12 +5,12 @@ _BATTERY_CHARGING_FLAG = 0b10000000
 
 
 profile = {
-    "name": "SteelSeries Aerox 3 Wireless",
+    "name": "SteelSeries Aerox 5 Wireless",
     "models": [
         {
-            "name": "SteelSeries Aerox 3 Wireless (wired mode)",
+            "name": "SteelSeries Aerox 5 Wireless (wired mode)",
             "vendor_id": 0x1038,
-            "product_id": 0x183A,
+            "product_id": 0x1854,
             "endpoint": 3,
         },
     ],
@@ -107,7 +107,7 @@ profile = {
         },
         "buttons_mapping": {
             "label": "Buttons mapping",
-            "description": "Set the mapping of the buttons",
+            "description": "Set the mapping of the buttonsX",
             "cli": ["-b", "--buttons"],
             "report_type": usbhid.HID_REPORT_TYPE_OUTPUT,
             "command": [0x2A],
@@ -120,8 +120,11 @@ profile = {
                 "Button4":    {"id": 0x04, "offset": 0x0F, "default": "button4"},
                 "Button5":    {"id": 0x05, "offset": 0x14, "default": "button5"},
                 "Button6":    {"id": 0x06, "offset": 0x19, "default": "dpi"},
-                "ScrollUp"  : {"id": 0x31, "offset": 0x1E, "default": "scrollup"},
-                "ScrollDown": {"id": 0x32, "offset": 0x23, "default": "scrolldown"},
+                "Button7":    {"id": 0x00, "offset": 0x1E, "default": "disabled"},
+                "Button8":    {"id": 0x00, "offset": 0x23, "default": "disabled"},
+                "Button9":    {"id": 0x00, "offset": 0x28, "default": "disabled"},
+                "ScrollUp"  : {"id": 0x31, "offset": 0x2D, "default": "scrollup"},
+                "ScrollDown": {"id": 0x32, "offset": 0x32, "default": "scrolldown"},
             },
             "button_field_length": 5,
             "button_disable":     0x00,
@@ -131,7 +134,7 @@ profile = {
             "button_scroll_up":   None,
             "button_scroll_down": None,
             # fmt: on
-            "default": "buttons(button1=button1; button2=button2; button3=button3; button4=button4; button5=button5; button6=dpi; scrollup=scrollup; scrolldown=scrolldown; layout=qwerty)",
+            "default": "buttons(button1=button1; button2=button2; button3=button3; button4=button4; button5=button5; button6=dpi; button7=disabled; button8=disabled; button9=disabled; scrollup=scrollup; scrolldown=scrolldown; layout=qwerty)",
         },
         "rainbow_effect": {
             "label": "rainbow effect",

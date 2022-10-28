@@ -55,11 +55,23 @@ SteelSeries Aerox 3 Wireless:
 +--------------------------------------------------------------+-----------+
 | SteelSeries Aerox 3 Wireless (wired mode)                    | 1038:183a |
 +--------------------------------------------------------------+-----------+
+| SteelSeries Aerox 3 Wireless (2.4 GHz wireless mode)         | 1038:1838 |
++--------------------------------------------------------------+-----------+
 
-SteelSeries Aerox 3 Wireless:
+SteelSeries Aerox 5 Wireless:
 
 +--------------------------------------------------------------+-----------+
-| SteelSeries Aerox 3 Wireless (2.4 GHz wireless mode)         | 1038:1838 |
+| SteelSeries Aerox 5 Wireless (wired mode)                    | 1038:1854 |
++--------------------------------------------------------------+-----------+
+| SteelSeries Aerox 5 Wireless (2.4 GHz wireless mode)         | 1038:1852 |
++--------------------------------------------------------------+-----------+
+
+SteelSeries Aerox 9 Wireless:
+
++--------------------------------------------------------------+-----------+
+| SteelSeries Aerox 9 Wireless (wired mode)                    | 1038:185a |
++--------------------------------------------------------------+-----------+
+| SteelSeries Aerox 9 Wireless (2.4 GHz wireless mode)         | 1038:1858 |
 +--------------------------------------------------------------+-----------+
 
 SteelSeries Kana v2:
@@ -84,6 +96,18 @@ SteelSeries Prime:
 | SteelSeries Prime Rainbow 6 Siege Black Ice Edition          | 1038:182a |
 +--------------------------------------------------------------+-----------+
 | SteelSeries Prime CS:GO Neo Noir Edition                     | 1038:1856 |
++--------------------------------------------------------------+-----------+
+
+SteelSeries Prime Wireless:
+
++--------------------------------------------------------------+-----------+
+| SteelSeries Prime Wireless (wired mode)                      | 1038:1842 |
++--------------------------------------------------------------+-----------+
+
+SteelSeries Prime Wireless:
+
++--------------------------------------------------------------+-----------+
+| SteelSeries Prime Wireless (2.4 GHz wireless mode)           | 1038:1840 |
 +--------------------------------------------------------------+-----------+
 
 SteelSeries Rival 100 / SteelSeries Rival 105:
@@ -240,12 +264,35 @@ SteelSeries Sensei TEN:
 Changelog
 ---------
 
-* **Rivalcfg NEXT:** [4.6.0]
+* **Rivalcfg NEXT:** [4.8.0]
 
   Features that are implemented on ``master`` and that will be released in the
   next Rivalcfg version:
 
-  * Nothing yet ;)
+  * Nothing yet :)
+
+* **4.7.0:**
+
+  * Add initial Aerox 9 Wireless support (#188)
+  * Add Aerox 5 Wireless support (#184)
+  * Fix inverted firmware version minor and major digits
+  * Fix crash when reading battry level of a device in sleep mode
+  * Improve udev rules reloading
+  * Rival 100: Rivalcfg is now able to read the firmware version of this device
+    (#179, @staticssleever668)
+
+* **4.6.0:**
+
+  * Add support for the Prime Wireless mouse (#172)
+  * Aerox 3 Wireless support improved:
+
+    * Sleep timer support implemented
+    * Dim timer support implemented
+    * Brightness removed to support Dim timer (it is still possible to dim the
+      LED by setting darker colors)
+
+  * Fix a crash when printing debug information with udev rules not installed
+  * Remove Python 2.7 compatibility code
 
 * **4.5.0:**
 

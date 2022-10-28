@@ -113,7 +113,9 @@ class Mouse:
             self.mouse_profile["firmware_version"]["response_length"],
             timeout_ms=200,
         )
-        return tuple(version[::-1])
+        if not version:
+            return (0,)
+        return tuple(version)
 
     @property
     def firmware_version(self):
@@ -149,13 +151,19 @@ class Mouse:
             timeout_ms=200,
         )
 
-        if "is_charging" in self.mouse_profile["battery_level"]:
-            result["is_charging"] = self.mouse_profile["battery_level"]["is_charging"](
-                data
-            )
+        try:
+            if "is_charging" in self.mouse_profile["battery_level"]:
+                result["is_charging"] = self.mouse_profile["battery_level"][
+                    "is_charging"
+                ](data)
+        except Exception:
+            pass
 
-        if "level" in self.mouse_profile["battery_level"]:
-            result["level"] = self.mouse_profile["battery_level"]["level"](data)
+        try:
+            if "level" in self.mouse_profile["battery_level"]:
+                result["level"] = self.mouse_profile["battery_level"]["level"](data)
+        except Exception:
+            pass
 
         return result
 
