@@ -1,38 +1,29 @@
 from .. import usbhid
 
 
-_BATTERY_CHARGING_FLAG = 0b10000000
-
-
 profile = {
-    "name": "SteelSeries Prime Wireless",
+    "name": "SteelSeries Prime Mini",
     "models": [
         {
-            "name": "SteelSeries Prime Wireless (wired mode)",
+            "name": "SteelSeries Prime Mini",
             "vendor_id": 0x1038,
-            "product_id": 0x1842,
-            "endpoint": 3,
-        },
-        {
-            "name": "SteelSeries Prime Mini Wireless (wired mode)",
-            "vendor_id": 0x1038,
-            "product_id": 0x184A,
+            "product_id": 0x184D,
             "endpoint": 3,
         },
     ],
     "settings": {
         "sensitivity": {
-            "label": "Sensibility presets",
+            "label": "Sensitivity presets",
             "description": "Set sensitivity preset (DPI)",
             "cli": ["-s", "--sensitivity"],
             "report_type": usbhid.HID_REPORT_TYPE_OUTPUT,
             "command": [0x2D],
             "value_type": "multidpi_range",
-            "input_range": [100, 18000, 100],
-            "output_range": [0x00, 0xD6, 1.2],
-            "dpi_length_byte": 1,
-            "first_preset": 0,
+            "input_range": [50, 18000, 50],
+            "output_range": [0x01, 0x0168, 1],
+            "dpi_length_byte": 2,
             "count_mode": "number",
+            "first_preset": 0,
             "max_preset_count": 5,
             "default": "400, 800, 1200, 2400, 3200",
         },
@@ -44,10 +35,10 @@ profile = {
             "command": [0x2B],
             "value_type": "choice",
             "choices": {
-                125: 0x03,
-                250: 0x02,
-                500: 0x01,
-                1000: 0x00,
+                125: 0x04,
+                250: 0x03,
+                500: 0x02,
+                1000: 0x01,
             },
             "default": 1000,
         },
@@ -56,7 +47,7 @@ profile = {
             "description": "Set the mouse LED color",
             "cli": ["-c", "--color"],
             "report_type": usbhid.HID_REPORT_TYPE_OUTPUT,
-            "command": [0x21, 0x01, 0x00],
+            "command": [0x21, 0x00],
             "value_type": "rgbcolor",
             "default": "red",
         },
@@ -88,30 +79,6 @@ profile = {
             # fmt: on
             "default": "buttons(button1=button1; button2=button2; button3=button3; button4=button4; button5=button5; button6=dpi; scrollup=scrollup; scrolldown=scrolldown; layout=qwerty)",
         },
-        "sleep_timer": {
-            "label": "Sleep timer",
-            "description": "Set the IDLE time before the mouse goes to sleep mode (minutes, 0 = disable)",
-            "cli": ["-t", "--sleep-timer"],
-            "report_type": usbhid.HID_REPORT_TYPE_OUTPUT,
-            "command": [0x29],
-            "value_type": "range",
-            "input_range": [0, 20, 1],
-            "output_range": [0x000000, 0x124F80, 60000],
-            "range_length_byte": 3,
-            "default": 5,
-        },
-        "dim_timer": {
-            "label": "Dim timer",
-            "description": "Set the IDLE time before the mouse light is dimmed (seconds, 0 = disable)",
-            "cli": ["-T", "--dim-timer"],
-            "report_type": usbhid.HID_REPORT_TYPE_OUTPUT,
-            "command": [0x23, 0x0F, 0x01, 0x00, 0x00],
-            "value_type": "range",
-            "input_range": [0, 1200, 1],
-            "output_range": [0x000000, 0x124F80, 1000],
-            "range_length_byte": 3,
-            "default": 30,
-        },
         "default_lighting": {
             "label": "Default lighting",
             "description": "Set default lighting at mouse startup",
@@ -125,13 +92,6 @@ profile = {
             },
             "default": "rainbow",
         },
-    },
-    "battery_level": {
-        "report_type": usbhid.HID_REPORT_TYPE_OUTPUT,
-        "command": [0x92],
-        "response_length": 2,
-        "is_charging": lambda data: bool(data[1] & _BATTERY_CHARGING_FLAG),
-        "level": lambda data: ((data[1] & ~_BATTERY_CHARGING_FLAG) - 1) * 5,
     },
     "save_command": {
         "report_type": usbhid.HID_REPORT_TYPE_OUTPUT,

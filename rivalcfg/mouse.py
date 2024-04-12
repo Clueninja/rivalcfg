@@ -39,7 +39,6 @@ def get_mouse(vendor_id=0x1038, product_id=None):
 
 
 class Mouse:
-
     """Generic class to handle any supported mouse.
 
     .. NOTE::
@@ -133,7 +132,7 @@ class Mouse:
 
         .. NOTE::
 
-           A value of ``None`` means the featue is not supported.
+           A value of ``None`` means the feature is not supported or that the mouse is turned off.
         """
         result = {
             "is_charging": None,
@@ -164,6 +163,9 @@ class Mouse:
                 result["level"] = self.mouse_profile["battery_level"]["level"](data)
         except Exception:
             pass
+
+        if result["level"] > 100 or result["level"] < 0:
+            return {"is_charging": None, "level": None}
 
         return result
 

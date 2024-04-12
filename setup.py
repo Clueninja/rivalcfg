@@ -15,9 +15,17 @@ except Exception as error:
 
 setup(
     name="rivalcfg",
-    version="4.7.0",
+    version="4.13.0",
     description="Configure SteelSeries gaming mice",
     url="https://github.com/flozz/rivalcfg",
+    project_urls={
+        "Source Code": "https://github.com/flozz/rivalcfg",
+        "Documentation": "https://flozz.github.io/rivalcfg/",
+        "Changelog": "https://github.com/flozz/rivalcfg#changelog",
+        "Issues": "https://github.com/flozz/rivalcfg/issues",
+        "Chat": "https://discord.gg/P77sWhuSs4",
+        "Donate": "https://github.com/flozz/rivalcfg#supporting-this-project",
+    },
     license="WTFPL",
 
     long_description=long_description,
@@ -30,7 +38,7 @@ setup(
     packages=find_packages(),
 
     install_requires=[
-        "hidapi>=0.7.99.post20",
+        "hidapi>=0.14.0",
         "setuptools",
     ],
 

@@ -75,7 +75,6 @@ Functions
 ---------
 """
 
-
 import argparse
 
 from ..color_helpers import is_color, parse_color_string
@@ -91,11 +90,11 @@ def process_value(setting_info, color):
     :rtype: [int, int, int]
     """
     # Color tuple
-    if type(color) in (tuple, list):
+    if isinstance(color, (tuple, list)):
         if len(color) != 3:
             raise ValueError("Not a valid color %s" % str(color))
         for channel in color:
-            if type(channel) != int or channel < 0 or channel > 255:
+            if not isinstance(channel, int) or channel < 0 or channel > 255:
                 raise ValueError("Not a valid color %s" % str(color))
         return list(color)
 

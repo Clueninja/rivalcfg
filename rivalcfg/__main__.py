@@ -51,14 +51,14 @@ def _render_battery_level(level=None, is_charging=None):
         result.append("[%-10s] %i %%" % ("=" * int(level / 10), level))
 
     if is_charging is None and level is None:
-        result.append("Unable to get the battery level")
+        result.append("Unable to get the battery level. Is the mouse turned on?")
 
     return " ".join(result)
 
 
 def main(args=sys.argv[1:]):
     # Display a message when no argument given
-    if len(sys.argv) == 1:
+    if not args:
         print("USAGE:\n  rivalcfg --help")
         sys.exit(1)
 
@@ -68,17 +68,21 @@ def main(args=sys.argv[1:]):
     # Try to open a mouse
     mouse = None
     if (
-        "--print-debug" not in sys.argv
-        and "--list" not in sys.argv
-        and "--version" not in sys.argv
-        and "--update-udev" not in sys.argv
-        and "--print-udev" not in sys.argv
+        "--print-debug" not in args
+        and "--list" not in args
+        and "--version" not in args
+        and "--update-udev" not in args
+        and "--print-udev" not in args
     ):
         try:
             mouse = get_first_mouse()
         except IOError as error:
-            if "--help" not in sys.argv and "-h" not in sys.argv:
+            if "--help" not in args and "-h" not in args:
                 raise error
+
+        if not mouse and "--help" not in args and "-h" not in args:
+            print("E: No supported device found.")
+            sys.exit(1)
 
     cli_parser = argparse.ArgumentParser(prog="rivalcfg", epilog=_EPILOG)
     cli.add_main_cli(cli_parser)
