@@ -1,6 +1,5 @@
 from .. import usbhid
 
-
 profile = {
     "name": "SteelSeries Rival 95 / SteelSeries Rival 100 PC Bang",
     "models": [
@@ -31,7 +30,7 @@ profile = {
     ],
     "settings": {
         "sensitivity1": {
-            "label": "Sensibility preset 1",
+            "label": "Sensitivity preset 1",
             "description": "Set sensitivity preset 1 (DPI)",
             "cli": ["-s", "--sensitivity1"],
             "report_type": usbhid.HID_REPORT_TYPE_OUTPUT,
@@ -50,7 +49,7 @@ profile = {
             "default": 1000,
         },
         "sensitivity2": {
-            "label": "Sensibility preset 2",
+            "label": "Sensitivity preset 2",
             "description": "Set sensitivity preset 2 (DPI)",
             "cli": ["-S", "--sensitivity2"],
             "report_type": usbhid.HID_REPORT_TYPE_OUTPUT,

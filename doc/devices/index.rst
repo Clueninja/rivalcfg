@@ -9,15 +9,20 @@ Supported Devices
 
    ./aerox3.rst
    ./aerox3_wireless.rst
+   ./aerox5.rst
    ./aerox5_wireless.rst
    ./aerox9_wireless.rst
    ./kanav2.rst
    ./kinzuv2.rst
    ./prime.rst
    ./prime_mini.rst
+   ./prime_plus.rst
    ./prime_wireless.rst
    ./rival3.rst
+   ./rival3_gen2.rst
    ./rival3_wireless.rst
+   ./rival3_wireless_gen2.rst
+   ./rival5.rst
    ./rival95.rst
    ./rival100.rst
    ./rival110.rst

@@ -16,29 +16,29 @@ jobs:
     steps:
 
       - name: "Checkout the repository"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: "Set up Python"
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
-          python-version: "3.12"
+          python-version: "3.14"
 
       - name: "Install Python build dependencies"
         run: |
-          pip install setuptools wheel nox
+          pip install build
 
       - name: "Build source distribution"
         run: |
-          python setup.py sdist
+          python -m build --sdist
 
       - name: "Build wheel"
         run: |
-          python setup.py bdist_wheel
+          python -m build --wheel
 
       - name: "Upload artifacts"
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
-          name: rivalcfg-dist
+          name: dist
           path: dist/
           retention-days: 1
 
@@ -52,12 +52,11 @@ jobs:
     steps:
 
       - name: "Download artifacts"
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
 
-      - name: "Move packages to the dist/ folder"
+      - name: "List packages"
         run: |
-          mkdir dist/
-          mv rivalcfg-dist/* dist/
+          find . -name "*.whl" -o -name "*.tar.gz"
 
       - name: "Publish packages on PyPI"
         uses: pypa/gh-action-pypi-publish@release/v1

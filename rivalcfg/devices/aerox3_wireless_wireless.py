@@ -1,6 +1,5 @@
 from . import aerox3_wireless_wired
 
-
 _WIRELESS_FLAG = 0b01000000
 _READBACK_LENGTH = 64
 
@@ -24,6 +23,12 @@ profile = {
             "name": "SteelSeries Aerox 3 Wireless (2.4 GHz wireless mode)",
             "vendor_id": 0x1038,
             "product_id": 0x1838,
+            "endpoint": 3,
+        },
+        {
+            "name": "SteelSeries Aerox 3 Wireless CS2 Dragon Lore Edition (2.4 GHz wireless mode)",
+            "vendor_id": 0x1038,
+            "product_id": 0x1878,
             "endpoint": 3,
         },
     ],

@@ -1,6 +1,5 @@
 import nox
 
-
 PYTHON_FILES = [
     "rivalcfg",
     "test",
@@ -11,21 +10,21 @@ PYTHON_FILES = [
 
 @nox.session(reuse_venv=True)
 def lint(session):
-    session.install("flake8", "black")
+    session.install("-e", ".[dev]")
     session.run("black", "--check", "--diff", "--color", *PYTHON_FILES)
     session.run("flake8", *PYTHON_FILES)
+    session.run("validate-pyproject", "pyproject.toml")
 
 
 @nox.session(reuse_venv=True)
 def black_fix(session):
-    session.install("black")
+    session.install("-e", ".[dev]")
     session.run("black", *PYTHON_FILES)
 
 
-@nox.session(python=["3.8", "3.9", "3.10", "3.11", "3.12"], reuse_venv=True)
+@nox.session(python=["3.10", "3.11", "3.12", "3.13", "3.14"], reuse_venv=True)
 def test(session):
-    session.install("pytest")
-    session.install(".")
+    session.install("-e", ".[dev]")
     session.run(
         "pytest",
         "--doctest-modules",
@@ -33,13 +32,14 @@ def test(session):
         "test",
         env={
             "RIVALCFG_DRY": "1",
+            "RIVALCFG_DEBUG_NO_COMMAND_DELAY": "1",
         },
     )
 
 
 @nox.session(reuse_venv=True)
 def gendoc(session):
-    session.install("sphinx", "sphinx-rtd-theme")
+    session.install("-e", ".[dev]")
     session.install("-e", ".")
     session.run("sphinx-build", "-M", "html", "doc", "build")
 

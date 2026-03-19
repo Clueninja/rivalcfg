@@ -1,5 +1,5 @@
 SteelSeries Prime
-===================
+=================
 
 
 Supported Models
@@ -13,8 +13,8 @@ Missing Features
 
 The following feature are currently not supported by Rivalcfg:
 
-* Button mapping
 * Advanced color / illumination configurations
+* Button bindings for mouse wheel (scroll)
 
 
 Command-Line Usage
@@ -57,6 +57,15 @@ Colors
 This mouse supports colors. Various formats are supported.
 
 .. include:: ./_colors.rst
+
+
+Buttons
+-------
+
+.. figure:: ./images/prime_buttons.svg
+   :alt: Prime buttons schema
+
+.. include:: ./_buttons.rst
 
 
 Python API

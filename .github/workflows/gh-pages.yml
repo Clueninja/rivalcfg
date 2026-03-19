@@ -11,12 +11,12 @@ jobs:
     steps:
 
       - name: "Pull the repository"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: "Set up Python"
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
-          python-version: "3.12"
+          python-version: "3.14"
 
       - name: "Install build dependencies"
         run: |
@@ -25,7 +25,6 @@ jobs:
 
       - name: "Install Python dependencies"
         run: |
-          pip3 install setuptools
           pip3 install nox
 
       - name: "Build Sphinx Doc"

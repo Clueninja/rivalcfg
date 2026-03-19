@@ -1,16 +1,16 @@
-rivalcfg: Configure SteelSeries gaming mice
+Rivalcfg: Configure SteelSeries gaming mice
 ===========================================
 
-|Github| |Discord| |PYPI Version| |Github Actions| |Black| |License|
+|GitHub| |Discord| |PYPI Version| |GitHub Actions| |Black| |License|
 
 Rivalcfg is a **Python library** and a **CLI utility program** that allows you
-to configure SteelSeries gaming mice on Linux and Windows (probably works on
-BSD and Mac OS too, but not tested).
+to configure SteelSeries gaming mice on Linux, macOS and Windows (probably works on
+BSD too, but not tested).
 
 I first created this program to configure my Rival 100 and the original Rival
 mice, then I added support for other Rival devices thanks to contributors.
 Today this project aims to support any SteelSeries gaming mice (Rival,
-Sensei,...).
+Sensei, Aerox, Prime,...).
 
    **IMPORTANT:** This is an unofficial software. It was made by reverse
    engineering devices and is not supported nor approved by SteelSeries.
@@ -18,219 +18,25 @@ Sensei,...).
 .. figure:: https://flozz.github.io/rivalcfg/_images/steelseries_mice.jpg
    :alt: SteelSeries Gaming Mice
 
-If you have any trouble running this software, please open an issue on Github:
+If you have any trouble running this software, please open an issue on GitHub:
 
 * https://github.com/flozz/rivalcfg/issues
 
 
-Documentation
--------------
+Links
+-----
 
-Main topics:
+* `Project website (rivalcfg.flozz.org) <https://rivalcfg.flozz.org/>`__
+* `News and announces <https://rivalcfg.flozz.org/news/>`__
+* `Download Rivalcfg <https://rivalcfg.flozz.org/download.html>`__
+* `Supported and unsupported devices <https://rivalcfg.flozz.org/devices.html>`__
+* `Rivalcfg documentation <https://flozz.github.io/rivalcfg/>`__:
 
-* `Requirements <https://flozz.github.io/rivalcfg/requirements.html>`_
-* `Installing Rivalcfg <https://flozz.github.io/rivalcfg/install.html>`_
-* `Documentation of supported devices <https://flozz.github.io/rivalcfg/devices/index.html>`_
-* `FAQ <https://flozz.github.io/rivalcfg/faq.html>`_
-* `Contributing <https://flozz.github.io/rivalcfg/contributing.html>`_ (please read before opening issues and PRs 😀️)
-
-... and more at:
-
-* https://flozz.github.io/rivalcfg/
-
-
-Supported Devices
------------------
-
-.. devices-list-start
-
-+------------------------------------------------------------------------------------+
-| **SteelSeries Aerox 3**                                                            |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Aerox 3                                                    | 1038:1836 |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Aerox 3 Wireless**                                                   |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Aerox 3 Wireless (wired mode)                              | 1038:183a |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Aerox 3 Wireless (2.4 GHz wireless mode)                   | 1038:1838 |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Aerox 5**                                                            |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Aerox 5                                                    | 1038:1850 |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Aerox 5 Wireless**                                                   |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Aerox 5 Wireless (wired mode)                              | 1038:1854 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Aerox 5 Wireless Destiny 2 Edition (wired mode)            | 1038:185e |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Aerox 5 Wireless Diablo IV Edition (wired mode)            | 1038:1862 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Aerox 5 Wireless (2.4 GHz wireless mode)                   | 1038:1852 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Aerox 5 Wireless Destiny 2 Edition (2.4 GHz wireless mode) | 1038:185c |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Aerox 5 Wireless Diablo IV Edition (2.4 GHz wireless mode) | 1038:1860 |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Aerox 9 Wireless**                                                   |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Aerox 9 Wireless (wired mode)                              | 1038:185a |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Aerox 9 Wireless (2.4 GHz wireless mode)                   | 1038:1858 |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Kana v2**                                                            |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Kana v2                                                    | 1038:137a |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Kinzu v2**                                                           |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Kinzu v2                                                   | 1038:1366 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Kinzu v2                                                   | 1038:1378 |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Prime**                                                              |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Prime                                                      | 1038:182e |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Prime Rainbow 6 Siege Black Ice Edition                    | 1038:182a |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Prime CS:GO Neo Noir Edition                               | 1038:1856 |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Prime Mini**                                                         |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Prime Mini                                                 | 1038:184d |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Prime Wireless**                                                     |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Prime Wireless (wired mode)                                | 1038:1842 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Prime Mini Wireless (wired mode)                           | 1038:184a |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Prime Wireless (2.4 GHz wireless mode)                     | 1038:1840 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Prime Mini Wireless (2.4 GHz wireless mode)                | 1038:1848 |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Rival 100 / SteelSeries Rival 105**                                  |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 100                                                  | 1038:1702 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 100 (Dell China)                                     | 1038:170a |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 100 Dota 2 Edition (retail)                          | 1038:170b |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 100 Dota 2 Edition (Lenovo)                          | 1038:170c |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 105                                                  | 1038:1814 |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Rival 110 / SteelSeries Rival 106**                                  |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 110                                                  | 1038:1729 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 106                                                  | 1038:1816 |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Rival 3**                                                            |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 3                                                    | 1038:1824 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 3 (firmware v0.37.0.0)                               | 1038:184c |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Rival 300 / SteelSeries Rival**                                      |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival                                                      | 1038:1384 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival Dota 2 Edition                                       | 1038:1392 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 300                                                  | 1038:1710 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 300 Fallout 4 Edition                                | 1038:1712 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 300 Evil Geniuses Edition                            | 1038:171c |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 300 CS:GO Fade Edition                               | 1038:1394 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 300 CS:GO Hyper Beast Edition                        | 1038:171a |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 300 CS:GO Fade Edition (stm32)                       | 1038:1716 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 300 Acer Predator Edition                            | 1038:1714 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 300 HP OMEN Edition                                  | 1038:1718 |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Rival 300S**                                                         |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 300S                                                 | 1038:1810 |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Rival 310**                                                          |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 310                                                  | 1038:1720 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 310 CS:GO Howl Edition                               | 1038:171e |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 310 PUBG Edition                                     | 1038:1736 |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Rival 3 Wireless**                                                   |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 3 Wireless (2.4 GHz mode)                            | 1038:1830 |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Rival 500**                                                          |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 500                                                  | 1038:170e |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Rival 600**                                                          |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 600                                                  | 1038:1724 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 600 Dota 2 Edition                                   | 1038:172e |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Rival 650 Wireless**                                                 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 650 Wireless (wired mode)                            | 1038:172b |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 650 Wireless (2.4 GHz wireless mode)                 | 1038:1726 |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Rival 700 / SteelSeries Rival 710**                                  |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 700                                                  | 1038:1700 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 710                                                  | 1038:1730 |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Rival 95 / SteelSeries Rival 100 PC Bang**                           |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 95                                                   | 1038:1706 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 95 MSI Edition                                       | 1038:1707 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 95 PC Bang                                           | 1038:1704 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Rival 100 PC Bang                                          | 1038:1708 |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Sensei 310**                                                         |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Sensei 310                                                 | 1038:1722 |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Sensei [RAW]**                                                       |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Sensei [RAW]                                               | 1038:1369 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Sensei [RAW] Diablo III Edition                            | 1038:1362 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Sensei [RAW] Guild Wars 2 Edition                          | 1038:136d |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Sensei [RAW] CoD Black Ops II Edition                      | 1038:136f |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Sensei [RAW] World of Tanks Edition                        | 1038:1380 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Sensei [RAW] Heroes of the Storm Edition                   | 1038:1390 |
-+------------------------------------------------------------------------+-----------+
-| **SteelSeries Sensei TEN**                                                         |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Sensei TEN                                                 | 1038:1832 |
-+------------------------------------------------------------------------+-----------+
-| SteelSeries Sensei TEN CS:GO Neon Rider Edition                        | 1038:1834 |
-+------------------------------------------------------------------------+-----------+
-
-.. devices-list-end
+  * `Requirements <https://flozz.github.io/rivalcfg/requirements.html>`__
+  * `Install from sources <https://flozz.github.io/rivalcfg/install.html>`__
+  * `Devices documentation <https://flozz.github.io/rivalcfg/devices/index.html>`__
+  * `FAQ <https://flozz.github.io/rivalcfg/faq.html>`__
+  * `Contributing <https://flozz.github.io/rivalcfg/contributing.html>`__ (please read before opening issues and PRs 😀️)
 
 
 Supporting this project
@@ -239,7 +45,7 @@ Supporting this project
 Wanna support this project?
 
 * `☕️ Buy me a coffee <https://www.buymeacoffee.com/flozz>`__,
-* `❤️ sponsor me on Github <https://github.com/sponsors/flozz>`__,
+* `❤️ sponsor me on GitHub <https://github.com/sponsors/flozz>`__,
 * `💵️ or give me a tip on PayPal <https://www.paypal.me/0xflozz>`__.
 
 
@@ -248,7 +54,67 @@ Changelog
 
 * **[NEXT]** (changes on ``master`` that have not been released yet):
 
-  * Nothing yet ;)
+  * feat(device) Added support of the Rival 5 (1038:183C) mouse (@Saltblob, @nonoo, @flozz, #165, #268)
+  * feat(device) Added support of the Rival 5 Destiny Edition (1038:183E) mouse (@flozz)
+  * feat(device) Added initial support of the Prime+ (1038:182C) mouse (@BenJamesAndo, @flozz, #201)
+  * fix(debug): Fixed a crash when getting hidapi version without having setuptools installed (@flozz)
+  * misc(standalone): Added a standalone build for Linux (@flozz)
+  * misc(standalone): Added a standalone build for Windows (@flozz, #231)
+  * misc(standalone): Added a standalone build for macOS (@flozz)
+  * misc(ssdb): Updated ssdb script to extract the product_id of wireless mice dongles (@flozz)
+
+* **v4.16.1 (hotfix):**
+
+  * fix(device): Fixed Rival 3 Wireless Gen 2 becoming unusable after setting sensitivity (@flozz, #273)
+  * fix(handler): Fixed ``multidpi_range_choice_xy`` handler with xxyy mapping using less than ``max_preset_count`` presets (@flozz, #273)
+
+* **v4.16.0:**
+
+  * feat(devices): Added support for the Aerox 3 Wireless CS2 Dragon Lore Edition (1038:187a, 1038:1878) (@flozz)
+  * feat(devices): Added support for the Rival 3 Gen 2 (1038:1870) (#249, #257, @flozz, @orsonteodoro)
+  * feat(devices): Added support for the Rival 3 Wireless Gen 2 (1038:1872) (#258, @flozz)
+  * feat(handler): Added range_choice handler (@flozz)
+  * feat(handler): Added multidpi_range_choice handler (@flozz)
+  * feat(handler): Added multidpi_range_choice_xy handler (@flozz)
+  * fix(devices): Fixed DPI values for devices using the TrueMove Air sensor (@flozz):
+
+    * Aerox 3 Wireless (1038:183A, 1038:187A, 1038:1838, 1038:1878)
+    * Aerox 5 (1038:1850)
+    * Aerox 5 Wireless (1038:1854, 1038:185E, 1038:1862, 1038:1852, 1038:185C, 1038:1860)
+    * Aerox 9 Wireless (1038:185A, 1038:1876, 1038:1858, 1038:1874)
+    * Prime Wireless (1038:1842, 1038:184A, 1038:1840, 1038:1848)
+    * Rival 3 Wireless (1038:1830)
+
+  * fix(devices): Fixed DPI values for devices using the TrueMove Core sensor (@flozz):
+
+    * Aerox 3 (1038:1836)
+    * Rival 3 (1038:1824, 1038:184C)
+
+  * fix(devices): Fixed DPI values for devices using the PixArt PMW3326 sensor (@flozz):
+
+    * Rival 106 device (1038:1816)
+    * Rival 110 device (1038:1729)
+    * Rival 300S device (1038:1810)
+
+  * misc(tests): Added tests for the Aerox 5 device (1038:1850) (@flozz)
+  * misc: Modernized packaging setup.py/setuptools -> pyproject.toml/flit (@flozz)
+  * misc: Added Python 3.14 support (@flozz)
+  * misc!: Removed Python 3.9 support (@flozz)
+
+* **v4.15.0:**
+
+  * feat(devices): Added button support for Prime mouse (@flozz, 248)
+  * fix(mouse): Fixed a crash when getting battery level in some circumstances (@flozz, #245)
+  * docs(install): Updated install instructions for newer Python versions (@flozz #235)
+  * docs(devices): Updated Prime Wireless and Prime Mini button schema (@flozz)
+
+* **v4.14.0:**
+
+  * feat: Added partial support of the Aerox 9 Wireless WOW Edition (@flozz)
+  * feat: Allow to reduce the delay between two commands sent to devices (@Miskler, #236)
+  * feat: Added an env var to remove the delay between commands to speedup the tests (@flozz)
+  * misc: Added Python 3.13 support (@flozz)
+  * misc!: Removed Python 3.8 support (@flozz)
 
 * **v4.13.0:**
 
@@ -454,7 +320,7 @@ Older changelog entries were moved to the `CHANGELOG.rst
 <https://github.com/flozz/rivalcfg/blob/master/CHANGELOG.rst>`_ file.
 
 
-.. |Github| image:: https://img.shields.io/github/stars/flozz/rivalcfg?label=Github&logo=github
+.. |GitHub| image:: https://img.shields.io/github/stars/flozz/rivalcfg?label=GitHub&logo=github
    :target: https://github.com/flozz/rivalcfg
 
 .. |Discord| image:: https://img.shields.io/badge/chat-Discord-8c9eff?logo=discord&logoColor=ffffff
@@ -463,7 +329,7 @@ Older changelog entries were moved to the `CHANGELOG.rst
 .. |PYPI Version| image:: https://img.shields.io/pypi/v/rivalcfg?logo=python&logoColor=f1f1f1
    :target: https://pypi.org/project/rivalcfg/
 
-.. |Github Actions| image:: https://github.com/flozz/rivalcfg/actions/workflows/python-ci.yml/badge.svg
+.. |GitHub Actions| image:: https://github.com/flozz/rivalcfg/actions/workflows/python-ci.yml/badge.svg
    :target: https://github.com/flozz/rivalcfg/actions
 
 .. |Black| image:: https://img.shields.io/badge/code%20style-black-000000.svg

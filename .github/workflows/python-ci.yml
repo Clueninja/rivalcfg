@@ -10,12 +10,12 @@ jobs:
 
     strategy:
       matrix:
-        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
 
       - name: "Pull the repository"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: "Install OS Dependencies"
         run: |
@@ -23,19 +23,18 @@ jobs:
           sudo apt-get install -y libusb-1.0-0-dev libudev-dev
 
       - name: "Set up Python ${{ matrix.python-version }}"
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
 
       - name: "Install Nox"
         run: |
-          pip3 install setuptools
           pip3 install nox
 
-      - name: "Lint with Flake8 and Black"
+      - name: "Lint"
         run: |
           python3 -m nox --session lint
 
-      - name: "Test with pytest"
+      - name: "Test"
         run: |
           python3 -m nox --session test-${{ matrix.python-version }}

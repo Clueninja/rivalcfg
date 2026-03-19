@@ -1,0 +1,98 @@
+name: "Standalone Builds"
+
+on: [push, pull_request]
+
+jobs:
+
+  linux:
+    name: "Linux Standalone Build"
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: "Checkout the repository"
+        uses: actions/checkout@v6
+
+      - name: "Set up Python"
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+
+      - name: "Build"
+        run: |
+          ./scripts/linbuild/build-rivalcfg-cli.sh
+
+      - name: "Check the build is working"
+        run: |
+          ./build/rivalcfg.linbuild/rivalcfg-cli.dist/rivalcfg --version
+
+      - name: "Make the release tarball"
+        run: |
+          ./scripts/linbuild/release-rivalcfg-cli.sh
+
+      - name: "Upload Linux tarball"
+        uses: actions/upload-artifact@v7
+        with:
+          name: standalone_linux_x86_64
+          path: "dist/*.tar.gz"
+
+  macos:
+    name: "macOS Standalone Build"
+    runs-on: macos-15
+
+    steps:
+      - name: "Checkout the repository"
+        uses: actions/checkout@v6
+
+      - name: "Set up Python"
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+
+      - name: "Build"
+        run: |
+          ./scripts/macbuild/build-rivalcfg-cli.sh
+
+      - name: "Check the build is working"
+        run: |
+          ./build/rivalcfg.macbuild/rivalcfg-cli.dist/rivalcfg --version
+
+      - name: "Make the release DMG"
+        run: |
+          ./scripts/macbuild/release-rivalcfg-cli.sh
+
+      - name: "Upload macOS DMG"
+        uses: actions/upload-artifact@v7
+        with:
+          name: standalone_macos_arm64
+          path: "dist/*.dmg"
+
+  windows:
+    name: "Windows Standalone Build"
+    runs-on: windows-2022
+
+    steps:
+      - name: "Checkout the repository"
+        uses: actions/checkout@v6
+
+      - name: "Set up Python"
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"  # NOTE: 3.14 not compatible yet
+
+      - name: "Build"
+        run: |
+          .\scripts\winbuild\build-rivalcfg-cli.bat
+
+      - name: "Check the build is working"
+        run: |
+          .\build\rivalcfg.winbuild\rivalcfg-cli.dist\rivalcfg.exe --version
+
+      - name: "Make the release Zip"
+        run: |
+          .\scripts\winbuild\release-rivalcfg-cli.bat
+
+      - name: "Upload Windows Zip"
+        uses: actions/upload-artifact@v7
+        with:
+          name: standalone_windows_x86_64
+          path: "dist/*.zip"

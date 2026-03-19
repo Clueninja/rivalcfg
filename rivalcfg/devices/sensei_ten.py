@@ -1,6 +1,5 @@
 from .. import usbhid
 
-
 # fmt: off
 _RGBGRADIENT_HEADER = {
     "header_length": 26,       # Length of the header excuding command / LED ID
@@ -37,7 +36,7 @@ profile = {
     "settings": {
         "sensitivity": {
             "label": "Sensitivity presets",
-            "description": "Set sensitivity preset (DPI)",
+            "description": "Set sensitivity presets (DPI)",
             "cli": ["-s", "--sensitivity"],
             "report_type": usbhid.HID_REPORT_TYPE_OUTPUT,
             "command": [0x55, 0x00],  # <COUNT> <SELECTED> <S1> <S2> ... <S5>

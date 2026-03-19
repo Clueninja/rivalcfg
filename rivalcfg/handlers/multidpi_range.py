@@ -84,7 +84,7 @@ from .range import process_range
 
 def process_value(setting_info, value, selected_preset=None):
     """Called by the :class:`rivalcfg.mouse.Mouse` class when processing a
-    "range" type setting.
+    "multidpi_range" type setting.
 
     :param dict setting_info: The information dict of the setting from the
                               device profile.

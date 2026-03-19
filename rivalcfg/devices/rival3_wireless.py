@@ -1,5 +1,5 @@
+from .dpi import truemove_air
 from .. import usbhid
-
 
 profile = {
     "name": "SteelSeries Rival 3 Wireless",
@@ -13,17 +13,16 @@ profile = {
     ],
     "settings": {
         "sensitivity": {
-            "label": "Sensibility presets",
-            "description": "Set sensitivity preset (DPI)",
+            "label": "Sensitivity presets",
+            "description": "Set sensitivity presets (DPI)",
             "cli": ["-s", "--sensitivity"],
             "report_type": usbhid.HID_REPORT_TYPE_OUTPUT,
             "command": [0x20],
-            "value_type": "multidpi_range",
+            "value_type": "multidpi_range_choice",
             "input_range": [100, 18000, 100],
-            "output_range": [0x00, 0xD6, 1.2],
+            "output_choices": truemove_air.choices,
             "dpi_length_byte": 2,
             "first_preset": 1,
-            "count_mode": "number",
             "max_preset_count": 5,
             "default": "400, 800, 1200, 2400, 3200",
         },

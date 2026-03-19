@@ -1,6 +1,5 @@
 from .. import usbhid
 
-
 profile = {
     "name": "SteelSeries Prime Mini",
     "models": [
@@ -14,7 +13,7 @@ profile = {
     "settings": {
         "sensitivity": {
             "label": "Sensitivity presets",
-            "description": "Set sensitivity preset (DPI)",
+            "description": "Set sensitivity presets (DPI)",
             "cli": ["-s", "--sensitivity"],
             "report_type": usbhid.HID_REPORT_TYPE_OUTPUT,
             "command": [0x2D],
